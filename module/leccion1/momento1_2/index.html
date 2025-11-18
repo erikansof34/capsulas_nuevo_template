@@ -1,0 +1,97 @@
+<section class="row h-100">
+  <div class="animate__animated animate__fadeInLeftBig col-12 sf-bg-dark sf-ct-col">
+    <img src="../../assets/img/avatars/avatar_equipares2.webp" alt="avatar"
+      class="sf-img-xl-10 mx-auto d-none d-xl-block">
+    <div class="ms-xl-4 mx-xl-0">
+      <h1 class="sf-text-white text-center">Actividad de <span class="sf-text-purple">refuerzo</span>
+      </h1>
+      <img src="../../assets/img/avatars/avatar_equipares2.webp" alt="avatar"
+        class="sf-img-80 sf-img-sm-60 sf-img-md-40 sf-img-lg-30 mx-auto d-xl-none mb-2">
+      <p class="sf-text-white text-justify">
+        Ahora apliquemos lo visto sobre la <strong>prevención del acoso laboral y violencia en el trabajo</strong> según la Ley Karin.
+      </p>
+    </div>
+  </div>
+
+  <div
+    class="animate__animated animate__fadeInRightBig col-md-12 px-5 pt-4 px-0 pb-1 pb-mt-0 d-flex justify-content-center align-items-center">
+    <div class="my-4 my-lg-0 text-center">
+      <i class="hipt hipt-light my-4">
+        De las 6 imágenes disponibles, elige 3 que representen situaciones relacionadas con la Ley Karin
+        <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down"></i>
+      </i>
+
+      <div class="row animate__animated animate__backInUp animate__delay-0s">
+        <!-- Actividad de selección de imágenes -->
+        <div class="actSelectImg text-center">
+          <div class="grid-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; max-width: 600px; margin: 0 auto;">
+            <div class="itemAct xmark" onclick="actSelectImg(this, 'xmarkAct')" style="position: relative; cursor: pointer; border: 2px solid transparent; border-radius: 8px; overflow: hidden;">
+              <img src="./momento1_2/img/slide_1.jpg" style="width: 100%; height: 120px; object-fit: cover;">
+              <img class="resAct" src="" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; display: none;">
+            </div>
+            <div class="itemAct check" onclick="actSelectImg(this, 'checkAct')" style="position: relative; cursor: pointer; border: 2px solid transparent; border-radius: 8px; overflow: hidden;">
+              <img src="./momento1_2/img/slide_2.jpg" style="width: 100%; height: 120px; object-fit: cover;">
+              <img class="resAct" src="" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; display: none;">
+            </div>
+            <div class="itemAct xmark" onclick="actSelectImg(this, 'xmarkAct')" style="position: relative; cursor: pointer; border: 2px solid transparent; border-radius: 8px; overflow: hidden;">
+              <img src="./momento1_2/img/slide_3.jpg" style="width: 100%; height: 120px; object-fit: cover;">
+              <img class="resAct" src="" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; display: none;">
+            </div>
+            <div class="itemAct check" onclick="actSelectImg(this, 'checkAct')" style="position: relative; cursor: pointer; border: 2px solid transparent; border-radius: 8px; overflow: hidden;">
+              <img src="./momento1_2/img/slide_4.jpg" style="width: 100%; height: 120px; object-fit: cover;">
+              <img class="resAct" src="" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; display: none;">
+            </div>
+            <div class="itemAct check" onclick="actSelectImg(this, 'checkAct')" style="position: relative; cursor: pointer; border: 2px solid transparent; border-radius: 8px; overflow: hidden;">
+              <img src="./momento1_2/img/slide_5.jpg" style="width: 100%; height: 120px; object-fit: cover;">
+              <img class="resAct" src="" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; display: none;">
+            </div>
+            <div class="itemAct xmark" onclick="actSelectImg(this, 'xmarkAct')" style="position: relative; cursor: pointer; border: 2px solid transparent; border-radius: 8px; overflow: hidden;">
+              <img src="./momento1_2/img/slide_6.jpg" style="width: 100%; height: 120px; object-fit: cover;">
+              <img class="resAct" src="" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; display: none;">
+            </div>
+          </div>
+
+          <div style="text-align:center; margin-top: 20px;">
+            <p class="sf-text-white"><strong><span id="respuestas_correctas">0</span> respuestas correctas de 3</strong></p>
+            <p hidden id="p_resultado" class="sf-text-white">
+              Su resultado porcentual es del: 
+              <strong><span id="resultado"></span>%</strong>
+            </p>
+          </div>
+
+          <div class="mt-3">
+            <button class="sf-btn sf-btn-secondary" onclick="reiniciarActividad();">
+              <i class="fas fa-sync"></i> Reiniciar
+            </button>
+            <br><br>
+            <i class="hipt hipt-light mb-2">Haz clic en el botón para guardar tu resultado</i><br>
+            <button class="sf-btn sf-btn-purple btn-finalizar" disabled style="margin-top: 10px;">
+              <i class="fas fa-check-circle"></i> Guardar Resultado
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.itemAct {
+  transition: all 0.3s ease;
+}
+
+.itemAct:hover {
+  transform: scale(1.05);
+  border-color: #007bff !important;
+}
+
+.itemAct.selected {
+  border-color: #28a745 !important;
+  box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+}
+
+.itemAct.incorrect {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 10px rgba(220, 53, 69, 0.5);
+}
+</style>
